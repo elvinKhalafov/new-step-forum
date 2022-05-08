@@ -1,0 +1,114 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forum :: New account</title>
+
+    <th:block th:replace="fragment/imports :: imports"/>
+
+</head>
+<body class="newaccountpage">
+
+<div class="container-fluid">
+
+    <th:block th:replace="fragment/header :: header"/>
+
+
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 breadcrumbf">
+                    <p>Create New account</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+
+
+                    <!-- POST -->
+                    <div class="post">
+                        <form th:action="@{/register}" th:object="${user}" class="form newtopic" method="post" enctype="multipart/form-data">
+                            <div class="postinfotop">
+                                <h2>Create New Account</h2>
+                            </div>
+
+                            <!-- acc section -->
+                            <div class="accsection">
+                                <div class="acccap">
+                                    <div class="userinfo pull-left">&nbsp;</div>
+                                    <div class="posttext pull-left"><h3>Required Fields</h3></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="topwrap">
+                                    <div class="userinfo pull-left">
+
+                                    </div>
+                                    <div class="posttext pull-left">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" placeholder="First Name" name="firstName" th:field="*{firstName}" class="form-control"/>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" placeholder="Last Name" name="lastName" th:field="*{lastName}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="text" placeholder="Email" name="email" th:field="*{email}" class="form-control"/>
+                                        </div>
+                                        <div>
+                                            <input type="file" name="img" class="form-control" accept="image/jpeg, image/jpg, image/png">
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="password" placeholder="Password" class="form-control"
+                                                       id="pass" name="pass" th:field="*{password}"/>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="password" placeholder="Retype Password"
+                                                       class="form-control" id="pass2" name="pass2"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <!-- acc section END -->
+
+                            <div class="postinfobot">
+
+                                <div class="pull-right postreply">
+                                    <div class="pull-left">
+                                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- POST -->
+
+
+                </div>
+                <th:block th:replace="fragment/right-menu :: menu"/>
+            </div>
+        </div>
+
+    </section>
+
+    <th:block th:replace="fragment/footer :: footer"/>
+</div>
+
+
+</body>
+
+</html>
